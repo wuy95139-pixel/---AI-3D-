@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>元宇宙数字展馆</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="welcome-screen">
+    <div class="welcome-card">
+        <h1>元宇宙数字展馆</h1>
+        <p>沉浸式三维交互展厅</p>
+        <button id="enter-btn">进入展馆</button>
+    </div>
+</div>
+
+<div id="ui-container" style="display:none;">
+    <div id="nav-menu">
+        <h3>展品导航</h3>
+        <ul>
+            <li onclick="app.flyTo('flower')">🌸 向日葵</li>
+            <li onclick="app.flyTo('scene')">🚗 车</li>
+            <li onclick="app.flyTo('laihama')">🗿 癞蛤蟆</li>
+            <li onclick="app.flyTo('doraemon')">🐱 哆啦A梦</li>
+            <li onclick="app.flyTo('boss')">👹 生化Boss</li>
+            <li onclick="app.flyTo('indian')">🦏犀牛</li>
+            <li onclick="app.flyTo('daji')">🦊 妲己（仅供学习演示使用）</li>
+            <li onclick="app.flyTo('apple')">🍎 苹果</li>
+            <li onclick="app.goHome()" style="margin-top:10px; border-top:1px solid rgba(0,0,0,0.1); color:#6b5c4d;">🏠 返回中心</li>
+        </ul>
+    </div>
+
+    <div id="info-panel">
+        <h2 id="exhibit-title">请选择展品</h2>
+        <div class="ai-notice">🔍 讲解内容由AI生成，请理性参考</div>
+        <div id="content">点击展品或左侧列表开始导览，点击导览员可互动。</div>
+        <button id="talk-btn" style="display:none; margin-top:15px; padding:12px 25px; background:#4a3f35; color:#fff; border:none; border-radius:30px; cursor:pointer; font-weight:bold; width:100%;">
+            🎤 开始讲解
+        </button>
+    </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="main.js"></script>
+</body>
+</html>
