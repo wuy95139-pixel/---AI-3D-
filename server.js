@@ -1,4 +1,17 @@
 // server.js - 根据展品外观详细讲解
+const express = require('express');
+const cors = require('cors');
+const https = require('https');
+
+const app = express();
+const PORT = 3000;
+
+// ★★★ 在这里填入你的阿里云 DashScope API Key ★★★
+const API_KEY = 'sk-ws-H.ERPYDRL.jTto.MEYCIQDG8HT4GgaDFnso53A0nWrHVfJ76hS5_Bk43Jij4dERGAIhAOfDvwi5JIkcJsCrY685RtHe8DJdcz1FrD47XvB84aTY';
+
+app.use(cors());
+app.use(express.json());
+
 function makeApiRequest(exhibitName) {
     return new Promise((resolve, reject) => {
         // 为每个展品提供详细的描述性提示
@@ -150,4 +163,8 @@ app.post('/api/chat', async (req, res) => {
         
         res.json({ text: backupText });
     }
+});
+
+app.listen(PORT, () => {
+    console.log(`🚀 AI 展馆讲解服务器已启动: http://localhost:${PORT}`);
 });

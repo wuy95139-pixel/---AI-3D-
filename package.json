@@ -1,0 +1,17 @@
+{
+  "name": "metaverse-gallery",
+  "version": "1.0.0",
+  "description": "元宇宙数字展馆 - AI 驱动 3D 交互导览系统",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  }
+}

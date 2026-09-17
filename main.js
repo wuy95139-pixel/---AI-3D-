@@ -139,14 +139,14 @@ class AdvancedGallery {
         this.exhibitMeshes = [];
         // 【保持你原始的路径不变】
         this.config = [
-            { id:'flower', url:'Sunburst_Blossom.glb', pos:[-10, 2.2, -20], name:'向日葵' },
-            { id:'doraemon', url:'doraemon.glb', pos:[10, 2.3, -20], name:'哆啦A梦' },
-            { id:'laihama', url:'laihama.gltf', pos:[-20, 1.5, -8], name:'瘌蛤蟆' },
-            { id:'indian', url:'xiniu/indian.gltf', pos:[20, 1.5, -8], name:'犀牛' },
-            { id:'boss', url:'boss/boss.glb', pos:[-10, 1.1, 20], name:'生化boss' },
-            { id:'scene', url:'lmodel/scene.gltf', pos:[10, 1.1, 20], name:'车' },
-            { id:'daji', url:'daji.glb', pos:[-20, 1.1, 8], name:'妲己' },
-            { id:'apple', url:'apple.gltf', pos:[20, 0.3, 8], name:'苹果' }
+            { id:'flower', url:'models/Sunburst_Blossom.glb', pos:[-10, 2.2, -20], name:'向日葵' },
+            { id:'doraemon', url:'models/doraemon.glb', pos:[10, 2.3, -20], name:'哆啦A梦' },
+            { id:'laihama', url:'models/laihama.gltf', pos:[-20, 1.5, -8], name:'瘌蛤蟆' },
+            { id:'indian', url:'models/xiniu/indian.gltf', pos:[20, 1.5, -8], name:'犀牛' },
+            { id:'boss', url:'models/boss/boss.glb', pos:[-10, 1.1, 20], name:'生化boss' },
+            { id:'scene', url:'models/lmodel/scene.gltf', pos:[10, 1.1, 20], name:'车' },
+            { id:'daji', url:'models/daji.glb', pos:[-20, 1.1, 8], name:'妲己' },
+            { id:'apple', url:'models/apple/apple.gltf', pos:[20, 0.3, 8], name:'苹果' }
         ];
 
         const loader = new GLTFLoader();
