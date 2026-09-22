@@ -2,12 +2,23 @@
 const express = require('express');
 const cors = require('cors');
 const https = require('https');
+const fs = require('fs');
+
+// 从 .env 文件（如存在）加载环境变量
+if (fs.existsSync('.env')) {
+    try { process.loadEnvFile('.env'); } catch (e) { /* 忽略加载错误 */ }
+}
 
 const app = express();
 const PORT = 3000;
 
-// ★★★ 在这里填入你的阿里云 DashScope API Key ★★★
-const API_KEY = 'sk-ws-H.ERPYDRL.jTto.MEYCIQDG8HT4GgaDFnso53A0nWrHVfJ76hS5_Bk43Jij4dERGAIhAOfDvwi5JIkcJsCrY685RtHe8DJdcz1FrD47XvB84aTY';
+// ★★★ 阿里云 DashScope API Key（从环境变量读取，勿硬编码进源码）★★★
+const API_KEY = process.env.DASHSCOPE_API_KEY;
+
+if (!API_KEY) {
+    console.warn('⚠️  未设置 DASHSCOPE_API_KEY，AI 生成将回退到预设解说文案。');
+    console.warn('    请在 .env 文件中填入：DASHSCOPE_API_KEY=你的新Key');
+}
 
 app.use(cors());
 app.use(express.json());
@@ -104,7 +115,7 @@ function makeApiRequest(exhibitName) {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${API_KEY}`,
-                'Content-Length': postData.length
+                'Content-Length': Buffer.byteLength(postData, 'utf8')
             }
         };
 
